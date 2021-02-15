@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ping
+spec:
+  containers:
+  - name: ping
+    image: ping:1
+    command: ["./ping"]
+    env:
+    - name: HOSTNAME
+      valueFrom:
+        configMapKeyRef:
+          name: tikal
+          key: hostname
+    - name: PORT
+      valueFrom:
+        configMapKeyRef:
+          name: tikal
+          key: port

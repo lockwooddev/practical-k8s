@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pong
+  labels:
+    app: pong
+spec:
+  containers:
+  - name: pong
+    image: pong:1
+    command: ["./pong"]
+    ports:
+    - name: web
+      containerPort: 9001
+      protocol: TCP
+    env:
+    - name: PORT
+      valueFrom:
+        configMapKeyRef:
+          name: tikal
+          key: port
