@@ -32,7 +32,8 @@ This will create a Kind k8s node in docker and a local registry running on port 
 https://k3s.io/
 
 ```bash
-WIP
+curl -L -O https://github.com/k3s-io/k3s/releases/download/v1.20.2%2Bk3s1/k3s
+sudo k3s server --write-kubeconfig-mode 644
 ```
 
 
