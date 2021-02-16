@@ -2,6 +2,12 @@ docker:
 	docker build -t ping:1 -f ping/Dockerfile .
 	docker build -t pong:1 -f pong/Dockerfile .
 
+docker-other:
+	docker build -t localhost:5000/ping:latest -f ping/Dockerfile .
+	docker build -t localhost:5000/pong:latest -f pong/Dockerfile .
+	docker push localhost:5000/ping:latest
+	docker push localhost:5000/pong:latest
+
 apply:
 	kubectl apply -f manifests
 

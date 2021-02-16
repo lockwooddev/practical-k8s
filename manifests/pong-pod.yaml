@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: pong
-    image: pong:1
+    image: localhost:5000/pong:latest
     command: ["./pong"]
     ports:
     - name: web

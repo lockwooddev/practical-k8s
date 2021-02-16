@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: ping
-    image: ping:1
+    image: localhost:5000/ping:latest
     command: ["./ping"]
     env:
     - name: HOSTNAME
